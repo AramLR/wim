@@ -1,14 +1,18 @@
 #Include "store.ahk"
 #Include "modes.ahk"
+#Include "drivers\debugger.ahk"
 
-#HotIf Store.mode == Modes.Debug
+#HotIf Store.isDebugging == true
 
 F5::{
     Reload()
-    MsgBox("The script has been reloaded", "Script reloaded", "T5000")
+
+    action := "The script has been reloaded"
+    Log(action)
+    MsgBox(action, "Script reloaded")
 }
 
 r::{
-;   SelectedFile := FileSelect(8,,"Choose debug file location", "Debug (*.log)")
-    MsgBox(Store.GetDebugReport())
+    Log("Generated debug report")
+    GetReport()
 }
