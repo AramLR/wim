@@ -8,9 +8,9 @@
 
 #HotIf
 
-+n::Store.SetMode(Modes.Normal)
-+i::Store.SetMode(Modes.Insert)
-+v::Store.SetMode(Modes.Visual)
-+l::Store.SetMode(Modes.Launcher)
-+d::Store.SetMode(Modes.Debug)
-+s::Store.SetMode(Modes.SpecialChars)
+!n::Store.SetMode(Modes.Normal)
+!i::Store.SetMode(Modes.Insert)
+!v::Store.SetMode(Modes.Visual)
+!l::Store.SetMode(Modes.Launcher)
+!d::Store.SetMode(Modes.Debug)
+
