@@ -1,4 +1,4 @@
-#Include "modes.ahk"
+#Include "modes\modes.ahk"
 #Include "drivers\debugger.ahk"
 
 class Store{

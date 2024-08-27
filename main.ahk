@@ -3,8 +3,7 @@
 #SingleInstance Force
 
 #Include "store.ahk"
-#Include "modes.ahk"
-#Include "debug.ahk"
+#Include "modes\modes.ahk"
 
 #HotIf
 
@@ -13,4 +12,4 @@
 !v::Store.SetMode(Modes.Visual)
 !l::Store.SetMode(Modes.Launcher)
 !d::Store.SetMode(Modes.Debug)
-
+!s::Store.SetMode(Modes.SpecialChars)

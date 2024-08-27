@@ -1,5 +1,5 @@
 #Include "../store.ahk"
-#Include "../modes.ahk"
+#Include "../modes/modes.ahk"
 
 global debugLog := ""
 

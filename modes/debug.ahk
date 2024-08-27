@@ -1,6 +1,6 @@
-#Include "store.ahk"
+#Include "../store.ahk"
 #Include "modes.ahk"
-#Include "drivers\debugger.ahk"
+#Include "../drivers/debugger.ahk"
 
 #HotIf Store.isDebugging == true
 
