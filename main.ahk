@@ -4,6 +4,8 @@
 
 #Include "store.ahk"
 #Include "modes\modes.ahk"
+#Include "app-scripts\onenote.ahk"
+#Include "modes\debug.ahk"
 
 #HotIf
 

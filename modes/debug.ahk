@@ -7,9 +7,7 @@
 F5::{
     Reload()
 
-    action := "The script has been reloaded"
-    Log(action)
-    MsgBox(action, "Script reloaded")
+    MsgBox("The script has been reloaded", "Script reloaded")
 }
 
 r::{
