@@ -5,4 +5,5 @@ class Modes{
     static Launcher := "launch"
     static Debug := "debug"
     static SpecialChars := "special chars"
+    static PlanHelper := "plan helper"
 }

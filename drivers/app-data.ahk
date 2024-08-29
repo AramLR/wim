@@ -13,8 +13,6 @@ class AppData{
 
     static Initialize(){
 
-
-
         if not DirExist(this.APP_DATA_DIR){
             DirCreate(this.APP_DATA_DIR)
         }
@@ -35,8 +33,7 @@ class AppData{
         this.INITIALIZED := true
     }
 
-    static GetDailyTodos(){
-
+    static GetPlanningHelperFileContents(){
         if not (this.INITIALIZED){
             this.Initialize()
         }
@@ -45,8 +42,33 @@ class AppData{
 
         parsed := JSON.Load(fileContent)
 
-        todos := parsed["dailyTodos"]
+        return parsed
+    }
+
+    static GetDailyTodos(){
+
+        fileContent := this.GetPlanningHelperFileContents()
+
+        todos := fileContent["dailyTodos"]
 
         return todos
+    }
+
+    static AddDailyTodo(todo){
+        if not (this.INITIALIZED){
+            this.Initialize()
+        }
+
+        currentTodos := this.GetDailyTodos()
+
+        currentTodos.Push(todo)
+
+        newValue := {
+            dailyTodos: currentTodos
+        }
+
+        FileDelete(this.APP_DATA_FILES["planningHelper"])
+        FileAppend(JSON.Dump(newValue), this.APP_DATA_FILES["planningHelper"])
+
     }
 }
