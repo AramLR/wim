@@ -16,3 +16,18 @@
     }
 
 }
+
+^l::{
+
+    newLine := "`n"
+
+    dailyTodos := AppData.GetDailyTodos()
+
+    message := "Daily Todos: " . newLine
+
+    for todo in dailyTodos{
+        message .= todo . newLine
+    }
+
+    MsgBox(message, "Daily Todos")
+}
