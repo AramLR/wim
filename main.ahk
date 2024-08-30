@@ -14,6 +14,8 @@
 
 AppData.Initialize()
 
+Store.mode := AppData.GetMode()
+
 !n::Store.SetMode(Modes.Normal)
 !i::Store.SetMode(Modes.Insert)
 !v::Store.SetMode(Modes.Visual)
@@ -21,3 +23,9 @@ AppData.Initialize()
 !d::Store.SetMode(Modes.Debug)
 !s::Store.SetMode(Modes.SpecialChars)
 !p::Store.SetMode(Modes.PlanHelper)
+
+ExitHandler(*){
+    AppData.SetMode(Store.mode)
+}
+
+OnExit(ExitHandler)

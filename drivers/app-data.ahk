@@ -18,7 +18,12 @@ class AppData{
         }
 
         if not FileExist(this.APP_DATA_FILES["general"]){
-            FileAppend("{}", this.APP_DATA_FILES["general"])
+
+            defaultValue := {
+                mode: "normal"
+            }
+
+            FileAppend(JSON.Dump(defaultValue), this.APP_DATA_FILES["general"])
         }
 
         if not FileExist(this.APP_DATA_FILES["planningHelper"]){
@@ -69,6 +74,27 @@ class AppData{
 
         FileDelete(this.APP_DATA_FILES["planningHelper"])
         FileAppend(JSON.Dump(newValue), this.APP_DATA_FILES["planningHelper"])
+
+    }
+
+    static GetMode(){
+        fileContent := FileRead(this.APP_DATA_FILES["general"])
+
+        jsonContent := JSON.Load(fileContent)
+
+        mode := jsonContent["mode"]
+
+        return mode
+    }
+
+    static SetMode(mode){
+
+        newValue := {
+            mode: mode
+        }
+
+        FileDelete(this.APP_DATA_FILES["general"])
+        FileAppend(JSON.Dump(newValue), this.APP_DATA_FILES["general"])
 
     }
 }
